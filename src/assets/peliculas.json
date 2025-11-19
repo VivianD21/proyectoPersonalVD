@@ -9,7 +9,7 @@
     "stock": 12,
     "valor del producto": 5500.00,
     "fecha de exhibición": "2025-10-05",
-    "imagen": "../img/image10.jpg"
+    "imagen": "../images/image10.jpg"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "stock": 8,
     "valor del producto": 7200.50,
     "fecha de exhibición": "2025-10-12",
-    "imagen": "../img/image2.jpg"
+    "imagen": "../images/image2.jpg"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "stock": 20,
     "valor del producto": 4300.00,
     "fecha de exhibición": "2025-09-30",
-    "imagen": "../img/image3.jpg"
+    "imagen": "../images/image3.jpg"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "stock": 5,
     "valor del producto": 9800.00,
     "fecha de exhibición": "2025-11-02",
-    "imagen": "../img/image4.jpg"
+    "imagen": "../images/image4.jpg"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "stock": 14,
     "valor del producto": 6100.75,
     "fecha de exhibición": "2025-10-20",
-    "imagen": "../img/image5.jpg"
+    "imagen": "../images/image5.jpg"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "stock": 25,
     "valor del producto": 3200.00,
     "fecha de exhibición": "2025-09-28",
-    "imagen": "../img/image6.jpg"
+    "imagen": "../images/image6.jpg"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "stock": 7,
     "valor del producto": 7900.00,
     "fecha de exhibición": "2025-10-08",
-    "imagen": "../img/image7.jpg"
+    "imagen": "../images/image7.jpg"
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "stock": 10,
     "valor del producto": 5400.00,
     "fecha de exhibición": "2025-11-15",
-    "imagen": "../img/image8.jpg"
+    "imagen": "../images/image8.jpg"
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@
     "stock": 18,
     "valor del producto": 4100.25,
     "fecha de exhibición": "2025-10-01",
-    "imagen": "../img/image9.jpg"
+    "imagen": "../images/image9.jpg"
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@
     "stock": 4,
     "valor del producto": 12500.00,
     "fecha de exhibición": "2025-12-01",
-    "imagen": "../img/image10.jpg"
+    "imagen": "../images/image10.jpg"
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@
     "stock": 30,
     "valor del producto": 2800.00,
     "fecha de exhibición": "2025-10-03",
-    "imagen": "../img/image11.jpg"
+    "imagen": "../images/image11.jpg"
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "stock": 6,
     "valor del producto": 8700.00,
     "fecha de exhibición": "2025-11-22",
-    "imagen": "../img/image12.jpg"
+    "imagen": "../images/image12.jpg"
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@
     "stock": 9,
     "valor del producto": 6600.00,
     "fecha de exhibición": "2025-10-18",
-    "imagen": "../img/image13.jpg"
+    "imagen": "../images/image13.jpg"
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@
     "stock": 11,
     "valor del producto": 4700.50,
     "fecha de exhibición": "2025-09-29",
-    "imagen": "../img/image14.jpg"
+    "imagen": "../images/image14.jpg"
   },
   {
     "id": 15,
@@ -177,7 +177,7 @@
     "stock": 3,
     "valor del producto": 13900.00,
     "fecha de exhibición": "2025-12-10",
-    "imagen": "../img/image15.jpg"
+    "imagen": "../images/image15.jpg"
   },
   {
     "id": 16,
@@ -189,7 +189,7 @@
     "stock": 22,
     "valor del producto": 3600.00,
     "fecha de exhibición": "2025-10-11",
-    "imagen": "../img/image16.jpg"
+    "imagen": "../images/image16.jpg"
   },
   {
     "id": 17,
@@ -201,7 +201,7 @@
     "stock": 13,
     "valor del producto": 5900.00,
     "fecha de exhibición": "2025-10-27",
-    "imagen": "../img/image17.jpg"
+    "imagen": "../images/image17.jpg"
   },
   {
     "id": 18,
@@ -213,7 +213,7 @@
     "stock": 2,
     "valor del producto": 15000.00,
     "fecha de exhibición": "2025-12-20",
-    "imagen": "../img/image18.jpg"
+    "imagen": "../images/image18.jpg"
   },
   {
     "id": 19,
@@ -225,7 +225,7 @@
     "stock": 16,
     "valor del producto": 5200.00,
     "fecha de exhibición": "2025-11-05",
-    "imagen": "../img/image19.jpg"
+    "imagen": "../images/image19.jpg"
   },
   {
     "id": 20,
@@ -237,7 +237,7 @@
     "stock": 15,
     "valor del producto": 6000.00,
     "fecha de exhibición": "2025-10-17",
-    "imagen": "../img/image20.jpg"
+    "imagen": "../images/image20.jpg"
   },
   {
     "id": 21,
@@ -249,6 +249,6 @@
     "stock": 1,
     "valor del producto": 17200.99,
     "fecha de exhibición": "2025-12-31",
-    "imagen": "../img/image21.jpg"
+    "imagen": "../images/image21.jpg"
   }
 ]

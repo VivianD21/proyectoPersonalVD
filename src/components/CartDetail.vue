@@ -20,7 +20,18 @@
           </thead>
           <tbody>
             <tr v-for="it in items" :key="it.product.id">
-              <td style="width:40%">{{ it.product['Nombre de película'] }}</td>
+              <td style="width:40%; display:flex; gap:.75rem; align-items:center;">
+                <img
+                  v-if="it.product.imagen"
+                  :src="resolveImage(it.product.imagen)"
+                  :alt="it.product['Nombre de película']"
+                  class="thumb"
+                />
+                <div>
+                  <div>{{ it.product['Nombre de película'] }}</div>
+                  <div class="small text-muted-light">{{ it.product.categoria || '' }}</div>
+                </div>
+              </td>
               <td>{{ it.quantity }}</td>
               <td>{{ formatCurrency(it.product['valor del producto']) }}</td>
               <td>{{ formatCurrency(it.product['valor del producto'] * it.quantity) }}</td>
@@ -77,6 +88,27 @@ export default {
       alert("PAGO GENERADO")
       this.$emit('clear-cart')
       this.$emit('checkout')
+    },
+
+    /**
+     * Resolve image path robustly:
+     * - If value starts with '/' assume it's an absolute public path (e.g. /images/image1.jpg)
+     * - Else try to resolve from src/assets via new URL (Vite will process it)
+     * - If that fails, fallback to /images/<name>
+     */
+    resolveImage(imageRef) {
+      if (!imageRef) return ''
+      try {
+        const name = String(imageRef)
+        if (name.startsWith('/')) {
+          return name
+        }
+        // intenta resolver desde src/assets (Vite)
+        return new URL(`../assets/${name}`, import.meta.url).href
+      } catch (err) {
+        // fallback a public/images
+        return `/images/${imageRef}`
+      }
     }
   }
 }
@@ -87,6 +119,15 @@ export default {
 .btn-white {
   background: #ffffff;
   color: #0b2545;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* miniatura en la tabla */
+.thumb {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
   border: 1px solid rgba(0,0,0,0.06);
 }
 </style>
