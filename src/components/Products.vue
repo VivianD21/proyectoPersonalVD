@@ -54,7 +54,7 @@ export default {
     const modalProduct = ref(null)
 
     function getImage(p) {
-      return p.imagen ? `/src/assets/${p.imagen}` : 'https://via.placeholder.com/400x250?text=Poster'
+      return p.imagen ? `/src/images/${p.imagen}` : 'https://via.placeholder.com/400x250?text=Poster'
     }
 
     function formatCurrency(v) {

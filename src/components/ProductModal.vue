@@ -24,7 +24,7 @@
 export default {
   props: { product: { type: Object, required: true } },
   methods: {
-    getImage(p) { return p.imagen ? `/src/assets/${p.imagen}` : 'https://via.placeholder.com/400x250?text=Poster' },
+    getImage(p) { return p.imagen ? `/src/images/${p.imagen}` : 'https://via.placeholder.com/400x250?text=Poster' },
     formatCurrency(v) { return new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(v) }
   }
 }
