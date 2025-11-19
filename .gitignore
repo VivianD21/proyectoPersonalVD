@@ -1,0 +1,13 @@
+node_modules/
+
+# crea .gitignore si no existe y añade las entradas solo si no están ya
+touch .gitignore
+grep -qxF ".env.local" .gitignore || echo ".env.local" >> .gitignore
+grep -qxF ".env" .gitignore || echo ".env" >> .gitignore
+
+
+# Ignorar variables de entorno
+.env
+
+# Ignorar logs
+*.log

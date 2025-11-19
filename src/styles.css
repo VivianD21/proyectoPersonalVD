@@ -1,0 +1,364 @@
+:root {
+    --bg-dark: #0b2545;
+    /* azul oscuro */
+    --text-light: #ffffff;
+    --table-bg: #0b0c4d;
+    /* morado */
+    --table-text: #f5e1c8;
+    /* beige */
+    --btn-bg: #ffffff;
+    --btn-text: #0b2545;
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.06);
+    --accent: #7fb3ff;
+}
+
+/* Reset / full width */
+* {
+    box-sizing: border-box
+}
+
+html,
+body,
+#app {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    place-content: center;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: var(--bg-dark);
+    color: var(--text-light)
+}
+
+/* Navbar (dark blue background with white text) - uses Bootstrap classes but override colors */
+.navbar-custom {
+    background: linear-gradient(90deg, #0b2545, var(--bg-dark));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: var(--text-light) !important
+}
+
+.navbar-custom .nav-link.router-link-active {
+    font-weight: 700;
+    color: var(--accent) !important;
+}
+
+/* Mobile-first hamburger visible automatically via Bootstrap toggler; ensure contrast */
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* App frame - full width content */
+.app-frame {
+    width: 100%;
+    padding: 1rem;
+    
+    background: transparent;
+}
+
+/* Cards - product list */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.75rem;
+}
+
+@media(min-width: 700px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: .5rem;
+}
+
+/* Buttons */
+.btn-white {
+    background: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Search input */
+.search-row {
+    display: flex;
+     gap: .5rem;
+    margin-bottom: .75rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.search-row input {
+    flex: 1;
+    padding: .5rem;
+       place-items: center;
+    border-radius: 6px;
+    max-width: 80%;
+    border: none;
+}
+
+/* Cart summary popup (50% of screen) */
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(173, 18, 18, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.cart-popup {
+    width: 90%;
+    max-width: 720px;
+    height: 70vh;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-light);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+/* Table styles (purple background + beige text) */
+.table-morado {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--table-bg);
+    color: var(--table-text);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.table-morado th,
+.table-morado td {
+    padding: .5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.table-morado th {
+    background: rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+/* Forms (match design) */
+.form-input {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: .5rem;
+    border-radius: 6px;
+    width: 100%;
+}
+
+/* Utilities */
+.text-muted-light {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: .9rem
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem
+}
+
+.small {
+    font-size: .9rem
+}
+
+/* Modal product detail */
+.modal-detail {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2100
+}
+
+
+
+/* Minor responsiveness tweaks */
+@media (max-width: 576px) {
+    .cart-popup {
+        height: 80vh
+    }
+}
+
+.vue-devtools-toggle {
+    display: none !important;
+}
+
+
+/* CART: overlay y popup (GLOBAL - src/styles.css) */
+
+/* overlay: cubre toda la pantalla y está por encima del navbar */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* oscurece la página */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9005; /* > navbar (9000) */
+}
+
+/* popup: por encima del overlay */
+.cart-popup {
+  width: 90%;
+  max-width: 820px;
+  max-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(178, 227, 250, 0.45);
+  z-index: 9006; /* por encima del overlay */
+  background: linear-gradient(200deg, rgb(5, 33, 75), rgba(144, 197, 247, 0.445));
+}
+
+/* estructura interna: productos scrollables y footer fijo */
+.cart-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--text-light);
+}
+
+/* zona scrollable con productos */
+.cart-body {
+  padding: 1rem;
+  overflow: auto;
+  flex: 1 1 auto;
+  background: transparent;
+}
+
+/* footer fijo al fondo del popup: fondo gris claro y texto negro */
+.cart-footer {
+  background: #f3f4f6; /* gris claro */
+  color: #111;
+  padding: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+/* botones dentro del footer */
+.cart-footer .btn {
+  min-width: 110px;
+}
+
+/* responsive ajustes */
+@media (max-width: 576px) {
+  .cart-popup { width: 96%; height: 92vh; max-width: 420px; }
+  .cart-footer { padding: .75rem; }
+}
+
+
+
+
+
+
+
+
+
+/* ----- Variables de altura (ajusta si tu navbar cambia) ----- */
+:root {
+  --navbar-height: 72px; /* ajustar a la altura real de tu navbar */
+}
+
+/* ----- Centrado global del "frame" de cada vista ----- */
+
+
+/* Contenedor interior que limita ancho y mantiene el estilo de tarjeta */
+.app-frame > .page-inner {
+  width: 100%;
+  max-width: 1100px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 20px rgba(11,37,69,0.06);
+  box-sizing: border-box;
+}
+
+/* Wrapper útil si tus vistas no crean .page-inner; aplica a su contenido directo */
+.app-frame > * {
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Variante compacta para formularios o pantallas pequeñas (menos altura) */
+.app-frame.compact {
+  min-height: auto;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+/* ----- Ajustes responsivos ----- */
+@media (max-width: 992px) {
+  .app-frame > .page-inner,
+  .app-frame > * {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 576px) {
+  .app-frame {
+    align-items: flex-start; /* en mobile evita un exceso de espacio vertical */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: calc(100vh - var(--navbar-height));
+  }
+  .app-frame > .page-inner,
+  .app-frame > * {
+    max-width: 100%;
+    padding: .75rem;
+  }
+}
+
+/* ----- Mantener modales y overlays centrados (ya están casi listos) ----- */
+/* Asegura que modal-detail y cart-overlay usen z-index alto y centren correctamente */
+.modal-detail,
+.cart-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  position: fixed;
+  z-index: 9999;
+}
+
+/* Ajustes visuales para .modal-box y .cart-popup */
+.modal-box,
+.cart-popup {
+  margin: 0 auto; /* reforzar centrado en navegadores edge */
+  box-sizing: border-box;
+}
